@@ -7,6 +7,15 @@
 #operations exists in Python)
 #Print out that many copies of the previous message on separate lines. (Hint: the string "\n is the same as pressing the ENTER button)
 
-print("Test")
+from datetime import date
 
-p = 2
+age = int(input("What is your age?"))
+name = input("What is your name?")
+print_count = int(input("Print output count?"))
+
+year_to_add = 100-age
+current_year = date.today().year
+output_year = current_year + year_to_add
+
+for index in range(print_count):
+	print("Hi "+name +" you will be 100 in "+ str(output_year)+"\n")
