@@ -9,13 +9,17 @@
 
 import math
 
-#num = input("Enter number for test")
-num = 38
-if  num % 2 != 0:
-	print("Result is odd")
+num = int(input("Enter number for test: "))
+check = int(input("Check for divisor: "))
 
-elif num % 4 == 0:
-	print("Result is even and divisible by four")
+if  num % 2 != 0:
+	msg = "Result is odd"
 
 else:
-	print("Result is even")
+	msg = "Result is even"
+
+
+if num % check == 0:
+	msg = msg + (" and divisible by "+str(check))
+
+print (msg)
