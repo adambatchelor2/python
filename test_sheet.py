@@ -1,4 +1,14 @@
 
-my_list = [1, 3, "Michele", [5, 6, 7]]
-for element in my_list:
-  print(element)
+
+waffleCount = int(input("How many waffles each? "))
+
+peopleCount = int(input("How many in your family? "))
+
+wafflesInPack = 10
+
+
+wafflesWeNeed = waffleCount * peopleCount
+
+packsNeeded = wafflesWeNeed / wafflesInPack
+
+print ("We need " + str(wafflesWeNeed) + " waffles and that is " + str(packsNeeded) + " packs")

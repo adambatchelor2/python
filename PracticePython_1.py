@@ -14,7 +14,9 @@ name = input("What is your name?")
 print_count = int(input("Print output count?"))
 
 year_to_add = 100-age
+
 current_year = date.today().year
+
 output_year = current_year + year_to_add
 
 for index in range(print_count):
