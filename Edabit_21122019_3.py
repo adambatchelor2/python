@@ -5,6 +5,23 @@
 #	for x in range (1,inStr.length)
 
 
-inStr = str("Streeeeeetch")
+inStr = ("SSStreeeeeeetcch")
 
-print (inStr.len)
+instr_list = list(set([x*2 for x in inStr]))
+
+for x in instr_list:
+	while inStr.find(x) != -1:
+		inStr = inStr[:inStr.find(x)]+inStr[inStr.find(x)+1:]
+		
+print(inStr)
+
+
+# def unstretch(word):
+# 	instr_list = list(set([x*2 for x in word]))
+
+# 	for x in instr_list:
+# 		while word.find(x) != -1:
+# 			inStr = word[:word.find(x)]+word[word.find(x)+1:]
+# 	return word
+
+# print(unstretch("Teeeeest"))
