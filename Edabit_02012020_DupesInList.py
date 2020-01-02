@@ -15,4 +15,4 @@ def return_unique(lst):
 			out.append(x)
 	return out
 
-print(return_unique([5, 5, 2, 4, 4, 4, 9, 9, 9, 1]))
+print(return_unique([1, 9, 8, 8, 7, 6, 1, 6]))
