@@ -1,14 +1,19 @@
 
 
-waffleCount = int(input("How many waffles each? "))
+# waffleCount = int(input("How many waffles each? "))
 
-peopleCount = int(input("How many in your family? "))
+# peopleCount = int(input("How many in your family? "))
 
-wafflesInPack = 10
+# wafflesInPack = 10
 
 
-wafflesWeNeed = waffleCount * peopleCount
+# wafflesWeNeed = waffleCount * peopleCount
 
-packsNeeded = wafflesWeNeed / wafflesInPack
+# packsNeeded = wafflesWeNeed / wafflesInPack
 
-print ("We need " + str(wafflesWeNeed) + " waffles and that is " + str(packsNeeded) + " packs")
+# print ("We need " + str(wafflesWeNeed) + " waffles and that is " + str(packsNeeded) + " packs")
+
+
+mylist = ["a", "c", "a", "b", "c"]
+mylist = list(dict.fromkeys(mylist))
+print(mylist)
