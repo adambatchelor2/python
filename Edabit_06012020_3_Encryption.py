@@ -12,12 +12,12 @@
 #Step 3: Add "aca" to the end of the word: "1lpp0aca"
 #Output: "1lpp0aca"
 
-inStr = "burak"
-inStr = inStr[::-1]
+def encrypt(word):
 
-inStr = inStr.replace("a","0")
-inStr = inStr.replace("e","1")
-inStr = inStr.replace("o","2")
-inStr = inStr.replace("u","3")
+	word = word[::-1]
+	word = word.replace("a","0")
+	word = word.replace("e","1")
+	word = word.replace("o","2")
+	word = word.replace("u","3")
 
-print(inStr+"aca")
+	return(word+"aca")
