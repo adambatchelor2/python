@@ -9,20 +9,20 @@ def clean_tweet(tweet):
         return ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", tweet).split()) 
 
 def get_tweet_sentiment(tweet): 
-    ''' 
-    Utility function to classify sentiment of passed tweet 
-    using textblob's sentiment method 
-    '''
     # create TextBlob object of passed tweet text 
     analysis = TextBlob(clean_tweet(tweet)) 
-    # set sentiment 
 
+    # return sentiment 
     return analysis.sentiment.polarity
-    # if analysis.sentiment.polarity > 0: 
-    #     return 'positive'
-    # elif analysis.sentiment.polarity == 0: 
-    #     return 'neutral'
-    # else: 
-    #     return 'negative'
 
-print(get_tweet_sentiment("people were kind but queues were lo"))
+
+# def get_tweet_subjectivity(tweet): 
+#     # create TextBlob object of passed tweet text 
+#     analysis = TextBlob(clean_tweet(tweet)) 
+
+#     # return sentiment 
+#     return analysis.sentiment
+
+test_str = "the lounge was dirty"
+
+print(get_tweet_sentiment(test_str))
