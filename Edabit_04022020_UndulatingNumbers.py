@@ -18,5 +18,5 @@ if len(n) >= 3:
 			list_str.append(n[x])
 
 	print(list_str)
-else:
+else:	
 	print('false')
