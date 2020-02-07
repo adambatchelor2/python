@@ -1,14 +1,6 @@
 
 from textblob import TextBlob
 
-# b = TextBlob("I havv goood speling!")
-
-# print(b.correct())
-
-
-# need iserror statement
-
-
 def translateString(textStr):
 
 	try:
@@ -25,6 +17,7 @@ def fixString(textStr):
 	textStr = TextBlob(textStr)
 	textStr = translateString(textStr)
 	textStr = spellingCorrect(textStr)
+	
 	return textStr
 
 b = "this lounge is diiirty and smelll"
