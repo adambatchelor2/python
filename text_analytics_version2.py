@@ -3,20 +3,11 @@ from textblob import TextBlob
 def getStrSentiment(textStr):
 
 	blob = TextBlob(textStr)
-	print (blob.detect_language())
-	# try: #if english error handle
-		
-	# 	texteng = textStr.translate(from_lang=textStr.detect_language(), to='en')
-	# 	print (texteng)
-	# 	return texteng.sentiment.polarity
-	# except:
-	# 	print ("Except")
-	# 	return textStr.sentiment.polarity
+	return blob.sentiment.polarity
 
 
-str_to_test = "je suis" #0.07 old method - 0.089 new lrd100027
+str_to_test = "The lounge was clean, the staff polite and very professional (nicely dressed) and the space provided was comfortable, relaxing and it felt inviting" #0.07 old method - 0.089 new lrd100027
 
 print (getStrSentiment(str_to_test))
 
-from textblob import TextBlob
  
