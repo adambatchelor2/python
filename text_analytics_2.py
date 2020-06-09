@@ -23,3 +23,5 @@ def fixString(textStr):
 b = "this lounge is diiirty and smelll"
 
 print(fixString(b))
+
+
