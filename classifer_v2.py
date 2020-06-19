@@ -26,7 +26,7 @@ from textblob.classifiers import NaiveBayesClassifier
 
 cl = NaiveBayesClassifier(train)
 
-testStr = 'The lounge was clean, the staff polite and very professional (nicely dressed) and the space provided was comfortable, relaxing and it felt inviting'
+testStr = 'The lounge was clean, relaxing and it felt inviting'
 
 testOut = cl.classify(testStr)
 testOut2 = cl.prob_classify(testStr)
