@@ -18,3 +18,5 @@ opp = (math.sin(radians))*radius
 inner_square = (opp*2)*(opp*2)
 
 print(round(big_square-inner_square))
+
+print ("Test")
