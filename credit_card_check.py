@@ -36,4 +36,4 @@ def isitLuhn (card_no):
 		return ("invalid")
 
 
-print (isitLuhn("123456789101112"))
+print(isitLuhn("123456789101112"))
