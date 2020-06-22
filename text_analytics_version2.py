@@ -6,7 +6,7 @@ def getStrSentiment(textStr):
 	return blob.sentiment.polarity
 
 
-str_to_test = "The lounge was clean, the staff polite and very professional (nicely dressed) and the space provided was comfortable, relaxing and it felt inviting" #0.07 old method - 0.089 new lrd100027
+str_to_test = "Does not offer free alcohol. Crowded place."
 
 print (getStrSentiment(str_to_test))
 

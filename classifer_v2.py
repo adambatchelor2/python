@@ -9,6 +9,7 @@ train = [
      ('This is the worst PriorityPass lounge I have ever been to', 'neg'),
      ('lounge is never open','neg'),
      ('food is rubbish','neg'),
+     ('waste of money','neg'),
      ("They have no facilities", 'neg'),
      ('Service was horrible', 'neg'),
      ('Food must be improved. Quality and selection was pathetic.', 'neg'),
@@ -26,7 +27,7 @@ from textblob.classifiers import NaiveBayesClassifier
 
 cl = NaiveBayesClassifier(train)
 
-testStr = 'The lounge was clean, relaxing and it felt inviting'
+testStr = 'Waste of money. Poor food and very very basic lounge.'
 
 testOut = cl.classify(testStr)
 testOut2 = cl.prob_classify(testStr)
