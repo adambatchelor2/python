@@ -10,9 +10,8 @@ inStr = "3 < 7 < 11"
 
 splitList = re.split('\s', inStr)
 print (splitList)
-print (len(splitList)/3)
 
-for x in range(0,math.ceil(len(splitList)/3)):
+for x in range(0,math.ceil(len(splitList)/2.5)):
 
     firstChar = 0+x
     comparison= 1+x
