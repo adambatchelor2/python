@@ -2,7 +2,6 @@ import re
 
 strIn = "this is a story all about how my life"
 
-
 def vowelCount(sting):
     vowels = {"a": 0, "e": 0, "i": 0, "o": 0, "u": 0}
     for x in vowels:  # dict loop
