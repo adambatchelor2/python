@@ -21,7 +21,6 @@ class hangman:
 
     def guess(self,inStr):
         if inStr in self.hidden_string:
-            print ("True")
             print (''.join(self.char_replace(inStr)))
         else:
             self.guess_count += 1
