@@ -8,14 +8,11 @@
 def primeTest(integer):
     x=2
     while x < integer:
-        #print(x)
         if integer % x == 0:
             return False
-            #break
         else:
             x+=1
     return True
-
 
 def nextPrime(integer):
     integer += 1
@@ -25,6 +22,6 @@ def nextPrime(integer):
         else:
             integer += 1
 
-
-inNumber = 50
-print(nextPrime(inNumber))
+inNumber = int(input("Enter value to find next prime..."))
+nextInt = nextPrime(inNumber)
+print(f"Your next prime number is {nextInt}")
