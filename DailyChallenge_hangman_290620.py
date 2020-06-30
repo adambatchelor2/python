@@ -13,6 +13,9 @@ class hangman:
 
     #Function to replace characters from current string with guessed character
     def char_replace(self, inStr):
+
+        #"test".replace("t","x")
+
         char_loc = self.hidden_string.find(inStr)
         self.current_string[char_loc] = inStr
 
@@ -24,25 +27,25 @@ class hangman:
             self.guess_count += 1
 
     #Check to see if game complete
-    def win(self):
+    def check_win(self):
         if self.current_string == self.hidden_string:
-            self.win == True
+            self.win = True
         else:
-            self.win == False
-
+            self.win = False
+        return self.win
 
     #Main guess checking function
     def guess_check(self,inStr):
 
         self.guess(inStr)
 
-        if self.win():
+        if self.check_win():
             return "You win"
         else:
             return (f"Try Again - {self.current_string}")
 
 
-game1 = hangman("ytest", 3)
+game1 = hangman("ytsete", 3)
 # game2 = hangman("loooong",3)
 
 
