@@ -24,9 +24,9 @@ class hangman:
 
     def win(self):
         if self.current_string == self.hidden_string:
-            self.win = True
+            self.win == True
         else:
-            self.win = False
+            self.win == False
 
 
     def guess_check(self,inStr):
@@ -39,7 +39,7 @@ class hangman:
             return (f"Try Again - {self.current_string}")
 
 game1 = hangman("ytest", 3)
-game2 = hangman("loooong",3)
+# game2 = hangman("loooong",3)
 
 #print(game1.current_string)
 # print(new_game.test())
