@@ -14,7 +14,7 @@ class bull_cow_game:
     def __init__(self):
         self.comp_no = str(random.randint(1000,9999))
         self.win = 0
-        print(f"Comp is: {self.comp_no}")
+        #print(f"Comp is: {self.comp_no}")
 
     def guess(self,guess_str):
         i = 0
@@ -36,8 +36,7 @@ if input("Do you want to play (y/n): ") == "y":
         player_guess = str(input("Guess the 4 digit number:"))
         print(f"You got {newGame.guess(player_guess)} correct")
 
-
-    Print("You win")
+    print("You win")
 
 else:
     print("Goodbye")
