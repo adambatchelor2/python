@@ -9,7 +9,7 @@ class hangman:
         self.guess_count = 0
         self.guess_limit = guess_limit
         self.win = False
-        self.current_string =  ['x' for x in range(len(self.hidden_string))]
+        self.current_string =  ['_' for x in range(len(self.hidden_string))]
 
     #Function to replace characters from current string with guessed character
     def char_replace(self, inStr):
@@ -44,9 +44,10 @@ class hangman:
 
         if self.check_win():
             strfinal = ''.join(self.current_string)
-            print (f"Well Done! It was {strfinal} and {self.guess_count} wrong guess(s)")
+            print (f"Well Done! It was '{strfinal}' and {self.guess_count} wrong guess(s)")
         else:
-            print (f"Try Again - {self.current_string}")
+            strCurrent = ''.join(self.current_string)
+            print (f"Try Again: {strCurrent}")
 
 
 game1 = hangman(input("First person - enter string to guess.."), 5)
