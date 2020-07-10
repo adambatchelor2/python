@@ -51,7 +51,7 @@ class hangman:
 
 
 game1 = hangman(input("First person - enter string to guess.."), 5)
-print(' '*10000)
+print('\n'*10)
 print("Now time to guess the letters....")
 while game1.guess_count < game1.guess_limit and game1.win == False:
      game1.guess_check(input("Guess letter:"))
