@@ -10,6 +10,7 @@ class hangman:
         self.guess_limit = guess_limit
         self.win = False
         self.current_string =  ['_' for x in range(len(self.hidden_string))]
+        self.guess_so_far = []
 
     #Function to replace characters from current string with guessed character
     def char_replace(self, inStr):
@@ -25,6 +26,7 @@ class hangman:
             self.char_replace(inStr)
         else:
             self.guess_count += 1
+            self.guess_so_far.append(inStr)
 
     #Check to see if game complete
     def check_win(self):
@@ -40,6 +42,7 @@ class hangman:
     #Main guess checking function
     def guess_check(self,inStr):
 
+
         self.guess(inStr)
 
         if self.check_win():
@@ -47,10 +50,11 @@ class hangman:
             print (f"Well Done! It was '{strfinal}' and {self.guess_count} wrong guess(s)")
         else:
             strCurrent = ''.join(self.current_string)
-            print (f"Try Again: {strCurrent}")
+            guess_left = self.guess_limit - self.guess_count
+            print (f"Try Again: {strCurrent} - guesses so far {self.guess_so_far} y,MNBVCXZ` .,MNBVCXZ` QWDFGHJKL;'\/.][POIUYTWQ    §1234567890-§   op90--{}|"""""AZ~AW2    §ou have {guess_left} guesses left")
 
 
-game1 = hangman(input("First person - enter string to guess.."), 5)
+game1 = hangman(input("First person - enter string to guess.."), 15)
 print('\n'*10)
 print("Now time to guess the letters....")
 while game1.guess_count < game1.guess_limit and game1.win == False:
