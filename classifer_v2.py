@@ -1,4 +1,4 @@
-#https://textblobreadthedocsio/en/dev/classifiershtml
+#https://textblob.readthedocs.io/en/dev/classifiers.html
 train = [
      ('delicious and well stocked snack bar', 'pos'),
      ('this is an amazing place!', 'pos'),
@@ -31,6 +31,11 @@ testStr = 'Waste of money. Poor food and very very basic lounge.'
 
 testOut = cl.classify(testStr)
 testOut2 = cl.prob_classify(testStr)
+
+if "food" in testStr:
+    print("Yes")
+else:
+    print("No food")
 
 print (testOut)
 print ('Positive = ' + str(round(testOut2.prob("pos"), 2)))
