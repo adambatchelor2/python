@@ -14,14 +14,16 @@ class bull_cow_game:
     def __init__(self):
         self.comp_no = str(random.randint(1000,9999))
         self.win = 0
+        self.guess_count = 0
         #print(f"Comp is: {self.comp_no}")
 
     def guess(self,guess_str):
         i = 0
         for x in range(0,len(guess_str)):
-            if guess_str[x] in self.comp_no:
+            if guess_str[x] == self.comp_no[x]:
                 i += 1
         self.has_won(i)
+        self.guess_count += 1
         return i
 
     def has_won(self,score):
@@ -29,12 +31,12 @@ class bull_cow_game:
             self.win = 1
 
 if input("Do you want to play (y/n): ") == "y":
-
+    print("Computer will think of a 4 digit number - you need to guess it...in the right order")
     newGame = bull_cow_game()
 
     while newGame.win == 0:
         player_guess = str(input("Guess the 4 digit number:"))
-        print(f"You got {newGame.guess(player_guess)} correct")
+        print(f"You got {newGame.guess(player_guess)} correct - {newGame.guess_count} guesses so far...")
 
     print("You win")
 
