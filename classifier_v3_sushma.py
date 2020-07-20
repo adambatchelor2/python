@@ -3,7 +3,7 @@ import pandas as pd
 
 from textblob import TextBlob
 from textblob.classifiers import NaiveBayesClassifier
-from googletrans import Translator
+#from googletrans import Translator
 
 translator = Translator()
 training = 'O:\\10. Workspace\DI Jiras\DI-670  Improve sentiment scoring of rating comments and deliver insights\Sushma\\train2.csv'
@@ -28,4 +28,3 @@ for index, row in df.iterrows():
 
 df["sentiment_score"] = out_list
 
-print(df)
