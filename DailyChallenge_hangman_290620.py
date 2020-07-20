@@ -51,7 +51,7 @@ class hangman:
         else:
             strCurrent = ''.join(self.current_string)
             guess_left = self.guess_limit - self.guess_count
-            print (f"Try Again: {strCurrent} - guesses so far {self.guess_so_far} y,MNBVCXZ` .,MNBVCXZ` QWDFGHJKL;'\/.][POIUYTWQ    §1234567890-§   op90--{}|"""""AZ~AW2    §ou have {guess_left} guesses left")
+            print (f"Try Again: {strCurrent} - guesses so far {self.guess_so_far} you have {guess_left} guesses left")
 
 
 game1 = hangman(input("First person - enter string to guess.."), 15)
