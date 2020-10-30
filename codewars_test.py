@@ -1,21 +1,19 @@
 
-#"is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
-import re
 
-str1 = "is2 Thi1s T4est 3a"
-num = ['1','2','3','4','5','6','7','8','9']
-mydict = {}
-strOut = ''
+# alphabet_position("The sunset sets at twelve o' clock.")
 
-for x in str1.split():
-    word = ''
-    for y in range(0,len(x)):
-        if x[y] in num:
-            intOut = int(x[y])
-    mydict[intOut] = x
-print(mydict)
+def alphabet_position(strIn):
+    alpha = 'abcdefghijklmnopqrstuvwxyz'
+    myDict = {}
+    outStr = ''
+    strIn = strIn.lower()
 
-for x in range(1, len(mydict)+1):
-    strOut += ' ' + mydict[x]
+    for x in range(0,len(alpha)):
+        myDict[alpha[x]] = x+1
 
-print(strOut.lstrip())
+    for x in range(0,len(strIn)):
+        if strIn[x] in myDict:
+            outStr += ' ' + str(myDict[strIn[x]])
+    return outStr.lstrip()
+
+print(alphabet_position("The sunset sets at twelve o' clock."))
