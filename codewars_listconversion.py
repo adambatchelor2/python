@@ -9,11 +9,6 @@ listIn.sort()
 outlist = []
 
 for x in range(0,len(listIn)-1):
-
-    
-
-    # if listIn[x] == listIn[x+1]-1:
-    #     print(x)
-    # else:
-    #     outlist.append(listIn[x])
+    if listIn[x] == listIn[x+1]-1:
+        print(listIn[x])
 
