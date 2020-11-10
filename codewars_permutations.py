@@ -5,20 +5,35 @@
 # permutations('ab');  # ['ab', 'ba']
 # permutations('aabb');  # ['aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa']
 
-instr = 'abc'
-strLen = len(instr)
+# permutations using library function
 
-listOut = []
-y = ''
+# TOO SLOW
+# def permutations(string):
+#     from itertools import permutations
+#
+#     perm = permutations(list(string))
+#
+#     outList = []
+#     y = ''
+#
+#     for i in list(perm):
+#         for x in i:
+#             y += str(x)
+#         if y not in outList:
+#              outList.append(y)
+#         y = ''
+#
+#     return(outList)
 
-listOut.append(instr[0]+instr[1]+instr[2])
 
+def permutations(string):
+    from itertools import permutations
+    perm = permutations(list(string))
 
-print(listOut)
-# 123 abc
-# 213 bac
-# 321 cba
-# 312 cab
-# 231 bca
-# 132 acb
+    inList = list(perm)
+    outList = []
+    outList = list(set([''.join(x) for x in inList]))
 
+    return(outList)
+
+print(permutations('aba'))
