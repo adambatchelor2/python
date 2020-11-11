@@ -48,20 +48,37 @@
 
 # print(sum_pairs([10, 5, 2, 3, 7, 5],10))
 
+# def sum_pairs(ints, s): # option 4 timeout
+#
+#     from itertools import permutations
+#
+#     perm = permutations(ints,2)
+#     permList = list(perm)
+#
+#     z = [x for x in permList if x[0]+x[1] == s]
+#
+#     if len(z)==0:
+#         return None
+#     else:
+#         z = [a for i,a in enumerate(z) if i < len(z)/2]
+#
+#         a = 1000
+#         outstr = []
+#
+#         for x in z:
+#
+#             if ints.index(x[0]) < a: # check first value less than max
+#                 ints[ints.index(x[0])] = 'a'  # hide first value
+#
+#             if ints.index(x[1]) < a:
+#                     a = ints.index(x[1])
+#                     outstr = []
+#                     outstr.append(x[0])
+#                     outstr.append(x[1])
+#         return outstr
 
-from itertools import permutations
 
-inList = [10, 5, 2, 3, 7, 5]
-target = 10
-perm = permutations(inList,2)
+# 1 list traverse
 
-permList = list(perm)
 
-z = [x for x in permList if x[0]+x[1] == target]
-z = list(set(z)) # remove duplicates
-
-for x in z:
-    print('{} and {}'.format(x[0],x[1]))
-    print(inList.index(x[0])+inList.index(x[0]))
-
-# print(z)
+print(sum_pairs([1, 2, 3, 4, 1, 0],2))
