@@ -102,14 +102,15 @@
 #
 # print(sum_pairs([1, 2, 3, 4, 1, 0], 2))
 
-
+#
 # def sum_pairs(ints, s): # option 6 still timed out
 #     out = []
 #
 #     for position, value in enumerate(ints):
 #        if s - value in ints[position + 1:]:
-#             ints = ints[0:(position + 1 + ints[position + 1:].index(s-value))] # cut down list
-#             out = [value, s-value] # overwrite if earlier
+#             ints = ints[position:(position + 1 + ints[position + 1:].index(s-value))] # cut down list
+#
+#             out.append([value, s-value]) # overwrite if another found in cut back list
 #
 #     if len(out)==0:
 #         return None
@@ -119,8 +120,22 @@
 #
 # print(sum_pairs([10, 5, 2, 3, 7, 5], 10))
 
-import numpy
-listIn = [10, 5, 2, 3, 7, 5]
+def sum_pairs(nums, sum_value):
+    seen = []
+    for x in nums:
+        diff = sum_value - x
+        if diff in seen:
+            return [diff, x]
+        seen.append(x)
 
-for (x, y), element in numpy.ndenumerate(numpy.array([i for i in listIn])):
-    print(x, y, element)
+print(sum_pairs([10, 5, 2, 3, 7, 5], 10))
+
+# def sum_pairs(ints, s): # paul code
+#     out = dict()
+#     for i, value in enumerate(ints):
+#         num = s - value
+#         if num in out:
+#             return [ints[out[num]],ints[i]]
+#         else:
+#             out[value] = i
+
