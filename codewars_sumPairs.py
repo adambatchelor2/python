@@ -81,4 +81,46 @@
 # 1 list traverse
 
 
-print(sum_pairs([1, 2, 3, 4, 1, 0],2))
+# def sum_pairs(ints, s): # option 5 still timed out
+#     z = 1000000000
+#     out = []
+#
+#     for position, value in enumerate(ints):
+#         if position > z:
+#             return out
+#         elif s - value in ints[position + 1:]:
+#             # print('pos: {} val:{} ind:{}'.format(position,value,ints[position + 1:].index(s-value)))
+#             if ints[position + 1:].index(s-value) < z: # check to see if before previous value
+#                 z = ints[position + 1:].index(s-value)
+#                 out = [value, s-value] # overwrite if earlier
+#
+#     if len(out)==0:
+#         return None
+#     else:
+#         return out
+#
+#
+# print(sum_pairs([1, 2, 3, 4, 1, 0], 2))
+
+
+# def sum_pairs(ints, s): # option 6 still timed out
+#     out = []
+#
+#     for position, value in enumerate(ints):
+#        if s - value in ints[position + 1:]:
+#             ints = ints[0:(position + 1 + ints[position + 1:].index(s-value))] # cut down list
+#             out = [value, s-value] # overwrite if earlier
+#
+#     if len(out)==0:
+#         return None
+#     else:
+#         return out
+#
+#
+# print(sum_pairs([10, 5, 2, 3, 7, 5], 10))
+
+import numpy
+listIn = [10, 5, 2, 3, 7, 5]
+
+for (x, y), element in numpy.ndenumerate(numpy.array([i for i in listIn])):
+    print(x, y, element)
