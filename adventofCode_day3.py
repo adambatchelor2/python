@@ -22,15 +22,15 @@ len_line = 31
 
 
 for i,x in enumerate(y):
-    if i%2!=0:
+    if i%2==0:
         if z > 30:
             z = z - 31
-        # print([x, z])
+        print([x, z])
         # print([x, z, x[z]])
 
         if x[z] == "#":
                 count += 1
-        z+=2
+        z+=1
 
 print(count)
 
@@ -38,4 +38,4 @@ print(count)
 # r1 d1 53
 # r5 d1 54
 # r7 d1 54
-# r1 d2 24
+# r1 d2 22
