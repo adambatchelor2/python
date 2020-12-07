@@ -1,6 +1,6 @@
 
 import re
-test_list= ['ecl', 'iyr', 'hgt', 'eyr', 'pid', 'byr', 'hcl']
+# test_list= ['ecl', 'iyr', 'hgt', 'eyr', 'pid', 'byr', 'hcl']
 
 with open("aoc4.txt", 'r', encoding="utf8") as f:
     data = f.read()
@@ -17,13 +17,15 @@ suc_count = 0
 #
 # print(suc_count)
 # print(y)
+
+# Part 2
 for x in y:
     out = re.findall("([a-z]{3}):([A-Za-z0-9#]*)",x)
     # print(x)
     mydict = {}
     for a in out:
         mydict[a[0]] = a[1]
-    print(mydict)
+    # print(mydict)
     # print(suc_count)
     count = 0
     if "byr" in mydict and "iyr" in mydict and "eyr" in mydict and "hgt" in mydict and "hcl" in mydict and "ecl" in mydict and "pid" in mydict:
