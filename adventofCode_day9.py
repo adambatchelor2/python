@@ -7,21 +7,53 @@ z = []
 for x in y:
     z.append(int(x))
 
-pre_amble = 25
-pre_list = []
+print(z)
+# pre_amble = 25
+# pre_list = []
 
+# Part 1
+# def pre_check(listIn, valIn):
+#     for x in listIn:
+#         if (valIn-x) in listIn and valIn-x != valIn:
+#             return "True"
+#     return "False"
+#
+# final_list = []
+# for x in range(pre_amble,len(z)):
+#
+#     final_list.append([z[x],pre_check(z[x-pre_amble:pre_amble+(x-pre_amble)],z[x])])
+#
+#
+# for a in final_list:
+#     if a[1]=='False':
+#         print (a[0])
+
+pre_amble = 0
+
+#Part 2
 def pre_check(listIn, valIn):
+    # print([listIn,valIn])
+    y = 0
     for x in listIn:
-        if (valIn-x) in listIn and valIn-x != valIn:
-            return "True"
+        # print(x)
+        y+=x
+    # print(['final',y])
+    if y == valIn:
+        return "True"
     return "False"
 
 final_list = []
-for x in range(pre_amble,len(z)):
+for a in range(2,20):
 
-    final_list.append([z[x],pre_check(z[x-pre_amble:pre_amble+(x-pre_amble)],z[x])])
+    pre_amble = a
+    final_list = []
+    for x in range(pre_amble,len(z)):
+        final_list.append([z[x],pre_check(z[x-pre_amble:pre_amble+(x-pre_amble)],1492208709),x])
+
+    for c in final_list:
+        if c[1]=='True' :
+            print ([c[0],c[2],pre_amble])
 
 
-for a in final_list:
-    if a[1]=='False':
-        print (a[0])
+
+
