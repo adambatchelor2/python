@@ -58,3 +58,5 @@ print(len(list_with_2))
 # populate all potential points in a grid
 # use dict to count how many of each point
 # Work out all coordinates in route
+
+# Answer = 4541 INCORRECT
