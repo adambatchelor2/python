@@ -1,5 +1,5 @@
 
-def coords(str):
+def coords(str): # split string into a list with two items
     b = str.split(" -> ")
     newlist = []
 
@@ -17,18 +17,19 @@ with open("aoc_2021_5.txt", 'r', encoding="utf8") as f:
     data = f.read()
 
 y = data.split("\n")
-# print(y)
+
 outCords = []
-for x in y:
-    newCoords = coords(x)
-    # print(newCoords)
-    if newCoords[0][0] == newCoords[1][0] or newCoords[0][1] == newCoords[1][1]: #all coords matching
-        # print(newCoords)
-        newCoords.sort()
-        # create all coords in line
+for x in y: #loop through rows of data
+    newCoords = coords(x) #call function to split from text into a lits
+    
+    if newCoords[0][0] == newCoords[1][0] or newCoords[0][1] == newCoords[1][1]: # only coords where one part is matching i.e. 3,7 - 8,7
+        
+        newCoords.sort() # order so that smallest is first
+        
+        # section to append all missing values into list i.e. 4,7 5,7 6,7 7,7
         if newCoords[0][0] == newCoords[1][0]:
-            for x in range(int(newCoords[0][1])+1,int(newCoords[1][1])):
-                newCoords.append([newCoords[0][0],str(x)])
+            for x in range(int(newCoords[0][1])+1,int(newCoords[1][1])): #create range for gap between coords
+                newCoords.append([newCoords[0][0],str(x)]) # fill in gap 
         elif newCoords[0][1] == newCoords[1][1]: #all coords matching
             for x in range(int(newCoords[0][0])+1,int(newCoords[1][0])):
                 newCoords.append([str(x),newCoords[0][1]])
@@ -40,23 +41,20 @@ for x in y:
 deDupeList = []
 final_list = []
 
+#dedupe list so when counting have a unique base
 for x in outCords:
     for y in x:
         final_list.append(y)
         if y not in deDupeList:
             deDupeList.append(y)
 
-# print(deDupeList)
+
 list_with_2 = []
 
 for x in deDupeList:
-    if final_list.count(x) >= 2:
+    if final_list.count(x) >= 2: #add all those with 2 or more count into list
         list_with_2.append(x)
-print(list_with_2)
-print(len(list_with_2))
-# print(outCords)
-# populate all potential points in a grid
-# use dict to count how many of each point
-# Work out all coordinates in route
+
+print(len(list_with_2)) #count list length
 
 # Answer = 4541 INCORRECT
