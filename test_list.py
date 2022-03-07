@@ -1,7 +1,10 @@
-from itertools import zip_longest
-  
-  
-x =[1, 2, 3, 4, 5, 6, 7]
-y =[8, 9, 10]
-z = list(zip_longest(x, y))
-print(z)
+
+
+def foo(list):
+    new_list = sum([float(x) for x in list])
+    return new_list
+
+
+listy = ['2.3','2.4']
+
+print(foo(listy))
